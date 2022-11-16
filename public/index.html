@@ -19,7 +19,9 @@
         <img src="../assets/images/Logo.png" alt="Logo.png" />
       </div>
       <!-- header  -->
-      <div class="font-bold text-2xl text-slate-800">ساعت هوشمند</div>
+      <div class="font-bold text-2xl text-slate-800 md:text-sm">
+        ساعت هوشمند
+      </div>
       <!-- searchIcon  -->
       <div
         class="bg-white shadow-lg w-8 h-8 flex items-center justify-center rounded-lg">
@@ -112,420 +114,208 @@
       </div>
     </div>
 
-    <!--  ======= Products List =======  -->
     <div
-      class="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-4 gap-y-6 mb-16">
-      <!-- c 1 -->
-      <div class="bg-white p-2 rounded-xl shadow-md">
-        <!-- img  -->
-        <div class="bg-gray-400 flex justify-center rounded-lg py-3 relative">
-          <img src="../assets/images/Cart/1.png" alt="watch pic" class="w-20" />
-          <span class="bg-gray-200 p-2 rounded-full absolute top-3 right-3">
+      class="grid grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)] md:gap-6">
+      <!-- sidebar  -->
+      <div class="hidden md:block col-span-3 row-span-2">Sidebar</div>
+      <!-- sort section  -->
+      <div class="hidden md:block col-span-8 lg:col-span-9">
+        <div
+          x-data="{sort : 1 , activeClass : 'text-slate-800 font-bold'}"
+          class="bg-white px-4 flex items-center gap-x-4 text-gray-400 rounded-lg">
+          <button>
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-4 h-4 fill-orange-600">
+              width="42"
+              height="42"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="42" height="42" rx="4" fill="#FFCBCB" />
               <path
-                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                d="M17.7704 15H35.8957"
+                stroke="#FF755C"
+                stroke-width="1.5"
+                stroke-linecap="round" />
+              <path
+                opacity="0.34"
+                d="M20.7913 20H32.8748"
+                stroke="#FF755C"
+                stroke-width="1.5"
+                stroke-linecap="round" />
+              <path
+                d="M24.8192 25H28.847"
+                stroke="#FF755C"
+                stroke-width="1.5"
+                stroke-linecap="round" />
+              <path
+                d="M8.70745 30.3958C8.59584 30.3958 8.48424 30.355 8.39613 30.2675L4.83064 26.7267C4.66029 26.5575 4.66029 26.2775 4.83064 26.1083C5.00098 25.9392 5.28293 25.9392 5.45328 26.1083L8.70745 29.34L11.9616 26.1083C12.132 25.9392 12.4139 25.9392 12.5843 26.1083C12.7546 26.2775 12.7546 26.5575 12.5843 26.7267L9.01876 30.2675C8.93066 30.355 8.81905 30.3958 8.70745 30.3958Z"
+                fill="#FF755C" />
+              <path
+                d="M8.77039 29.604C8.49515 29.604 8.26691 29.2701 8.26691 28.8675V12.3405C8.26691 11.9379 8.49515 11.604 8.77039 11.604C9.04562 11.604 9.27387 11.9379 9.27387 12.3405V28.8675C9.27387 29.2701 9.04562 29.604 8.77039 29.604Z"
+                fill="#FF755C" />
             </svg>
-          </span>
-        </div>
-        <!-- details  -->
-        <div class="flex items-center justify-between mt-5 px-2">
-          <span class="text-slate-200">اپل</span>
-          <div class="flex flex-row-reverse">
-            <div class="bg-white p-2 ring-2 ring-slate-300 rounded-full"></div>
-            <div class="bg-orange-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-yellow-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-indigo-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-orange-300 p-2 rounded-full ml-[-3px]"></div>
-          </div>
-        </div>
-        <!-- model  -->
-        <div class="mt-3">
-          <p class="font-medium text-xs">ساعت هوشمند اپل سری ۶</p>
-        </div>
-        <!-- price  -->
-        <div class="mt-5 mb-3 text-end ml-4">
-          <p class="text-orange-700 font-medium">۴,۲۵۰,۰۰۰ تومان</p>
-        </div>
-        <hr class="mx-3" />
-        <!-- order  -->
-        <div class="text-center mt-3">
-          <p class="text-orange-600 font-bold">مشاهده و سفارش</p>
+          </button>
+          <button @click = "sort = 1" :class="sort === 1 ? activeClass : '' " class="py-4 relative">
+            <span>محبوب ترین</span>
+            <span x-show= "sort ===1" class="w-1 h-1 bg-orange-600 rounded-full absolute top-2 left-0"></span>
+          </button>
+          <button @click = "sort = 2" :class="sort === 2 ? activeClass : '' " class="py-4 relative">
+            <span>پربازدید ترین</span>
+            <span x-show= "sort ===2" class="w-1 h-1 bg-orange-600 rounded-full absolute top-2 left-0"></span>
+          </button>
+          <button @click = "sort = 3" :class="sort === 3 ? activeClass : '' " class="py-4 relative">
+            <span>گران ترین</span>
+            <span x-show= "sort ===3" class="w-1 h-1 bg-orange-600 rounded-full absolute top-2 left-0"></span>
+          </button>
+          <button @click = "sort = 4" :class="sort === 4 ? activeClass : '' " class="py-4 relative">
+            <span>ارزان تران</span>
+            <span x-show= "sort ===4" class="w-1 h-1 bg-orange-600 rounded-full absolute top-2 left-0"></span>
+          </button>
         </div>
       </div>
-      <!-- c 2 -->
-      <div class="bg-white p-2 rounded-xl shadow-md">
-        <!-- img  -->
-        <div class="bg-gray-400 flex justify-center rounded-lg py-3 relative">
-          <img src="../assets/images/Cart/2.png" alt="watch pic" class="w-20" />
-          <span class="bg-gray-200 p-2 rounded-full absolute top-3 right-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-4 h-4 fill-orange-600">
-              <path
-                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-            </svg>
-          </span>
-        </div>
-        <!-- details  -->
-        <div class="flex items-center justify-between mt-5 px-2">
-          <span class="text-slate-200">اپل</span>
-          <div class="flex flex-row-reverse">
-            <div class="bg-gray-600 p-2 rounded-full"></div>
-            <div class="bg-orange-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-yellow-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-indigo-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-orange-300 p-2 rounded-full ml-[-3px]"></div>
-          </div>
-        </div>
-        <!-- model  -->
-        <div class="mt-3">
-          <p class="font-medium text-xs">ساعت هوشمند اپل سری ۳</p>
-        </div>
-        <!-- price  -->
-        <div class="mt-5 mb-3 text-end ml-4">
-          <p class="text-orange-700 font-medium">۲,۲۵۰,۰۰۰ تومان</p>
-        </div>
-        <hr class="mx-3" />
-        <!-- order  -->
-        <div class="text-center mt-3">
-          <p class="text-orange-600 font-bold">مشاهده و سفارش</p>
-        </div>
-      </div>
-      <!-- c 3 -->
-      <div class="bg-white p-2 rounded-xl shadow-md">
-        <!-- img  -->
-        <div class="bg-gray-400 flex justify-center rounded-lg py-3 relative">
-          <img src="../assets/images/Cart/1.png" alt="watch pic" class="w-20" />
-          <span class="bg-gray-200 p-2 rounded-full absolute top-3 right-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-4 h-4 fill-orange-600">
-              <path
-                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-            </svg>
-          </span>
-        </div>
-        <!-- details  -->
-        <div class="flex items-center justify-between mt-5 px-2">
-          <span class="text-slate-200">اپل</span>
-          <div class="flex flex-row-reverse">
-            <div class="bg-white p-2 ring-2 ring-slate-300 rounded-full"></div>
-            <div class="bg-orange-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-yellow-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-indigo-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-orange-300 p-2 rounded-full ml-[-3px]"></div>
-          </div>
-        </div>
-        <!-- model  -->
-        <div class="mt-3">
-          <p class="font-medium text-xs">ساعت هوشمند اپل سری ۶</p>
-        </div>
-        <!-- price  -->
-        <div class="mt-5 mb-3 text-end ml-4">
-          <p class="text-orange-700 font-medium">۴,۲۵۰,۰۰۰ تومان</p>
-        </div>
-        <hr class="mx-3" />
-        <!-- order  -->
-        <div class="text-center mt-3">
-          <p class="text-orange-600 font-bold">مشاهده و سفارش</p>
-        </div>
-      </div>
-      <!-- c 4 -->
-      <div class="bg-white p-2 rounded-xl shadow-md">
-        <!-- img  -->
-        <div class="bg-gray-400 flex justify-center rounded-lg py-3 relative">
-          <img src="../assets/images/Cart/2.png" alt="watch pic" class="w-20" />
-          <span class="bg-gray-200 p-2 rounded-full absolute top-3 right-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-4 h-4 fill-orange-600">
-              <path
-                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-            </svg>
-          </span>
-        </div>
-        <!-- details  -->
-        <div class="flex items-center justify-between mt-5 px-2">
-          <span class="text-slate-200">اپل</span>
-          <div class="flex flex-row-reverse">
-            <div class="bg-gray-600 p-2 rounded-full"></div>
-            <div class="bg-orange-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-yellow-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-indigo-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-orange-300 p-2 rounded-full ml-[-3px]"></div>
-          </div>
-        </div>
-        <!-- model  -->
-        <div class="mt-3">
-          <p class="font-medium text-xs">ساعت هوشمند اپل سری ۳</p>
-        </div>
-        <!-- price  -->
-        <div class="mt-5 mb-3 text-end ml-4">
-          <p class="text-orange-700 font-medium">۲,۲۵۰,۰۰۰ تومان</p>
-        </div>
-        <hr class="mx-3" />
-        <!-- order  -->
-        <div class="text-center mt-3">
-          <p class="text-orange-600 font-bold">مشاهده و سفارش</p>
-        </div>
-      </div>
-      <!-- c 5 -->
-      <div class="bg-white p-2 rounded-xl shadow-md">
-        <!-- img  -->
-        <div class="bg-gray-400 flex justify-center rounded-lg py-3 relative">
-          <img src="../assets/images/Cart/1.png" alt="watch pic" class="w-20" />
-          <span class="bg-gray-200 p-2 rounded-full absolute top-3 right-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-4 h-4 fill-orange-600">
-              <path
-                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-            </svg>
-          </span>
-        </div>
-        <!-- details  -->
-        <div class="flex items-center justify-between mt-5 px-2">
-          <span class="text-slate-200">اپل</span>
-          <div class="flex flex-row-reverse">
-            <div class="bg-white p-2 ring-2 ring-slate-300 rounded-full"></div>
-            <div class="bg-orange-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-yellow-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-indigo-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-orange-300 p-2 rounded-full ml-[-3px]"></div>
-          </div>
-        </div>
-        <!-- model  -->
-        <div class="mt-3">
-          <p class="font-medium text-xs">ساعت هوشمند اپل سری ۶</p>
-        </div>
-        <!-- price  -->
-        <div class="mt-5 mb-3 text-end ml-4">
-          <p class="text-orange-700 font-medium">۴,۲۵۰,۰۰۰ تومان</p>
-        </div>
-        <hr class="mx-3" />
-        <!-- order  -->
-        <div class="text-center mt-3">
-          <p class="text-orange-600 font-bold">مشاهده و سفارش</p>
-        </div>
-      </div>
-      <!-- c 6 -->
-      <div class="bg-white p-2 rounded-xl shadow-md">
-        <!-- img  -->
-        <div class="bg-gray-400 flex justify-center rounded-lg py-3 relative">
-          <img src="../assets/images/Cart/2.png" alt="watch pic" class="w-20" />
-          <span class="bg-gray-200 p-2 rounded-full absolute top-3 right-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-4 h-4 fill-orange-600">
-              <path
-                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-            </svg>
-          </span>
-        </div>
-        <!-- details  -->
-        <div class="flex items-center justify-between mt-5 px-2">
-          <span class="text-slate-200">اپل</span>
-          <div class="flex flex-row-reverse">
-            <div class="bg-gray-600 p-2 rounded-full"></div>
-            <div class="bg-orange-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-yellow-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-indigo-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-orange-300 p-2 rounded-full ml-[-3px]"></div>
-          </div>
-        </div>
-        <!-- model  -->
-        <div class="mt-3">
-          <p class="font-medium text-xs">ساعت هوشمند اپل سری ۳</p>
-        </div>
-        <!-- price  -->
-        <div class="mt-5 mb-3 text-end ml-4">
-          <p class="text-orange-700 font-medium">۲,۲۵۰,۰۰۰ تومان</p>
-        </div>
-        <hr class="mx-3" />
-        <!-- order  -->
-        <div class="text-center mt-3">
-          <p class="text-orange-600 font-bold">مشاهده و سفارش</p>
-        </div>
-      </div>
-      <!-- c 7 -->
-      <div class="bg-white p-2 rounded-xl shadow-md">
-        <!-- img  -->
-        <div class="bg-gray-400 flex justify-center rounded-lg py-3 relative">
-          <img src="../assets/images/Cart/1.png" alt="watch pic" class="w-20" />
-          <span class="bg-gray-200 p-2 rounded-full absolute top-3 right-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-4 h-4 fill-orange-600">
-              <path
-                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-            </svg>
-          </span>
-        </div>
-        <!-- details  -->
-        <div class="flex items-center justify-between mt-5 px-2">
-          <span class="text-slate-200">اپل</span>
-          <div class="flex flex-row-reverse">
-            <div class="bg-white p-2 ring-2 ring-slate-300 rounded-full"></div>
-            <div class="bg-orange-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-yellow-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-indigo-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-orange-300 p-2 rounded-full ml-[-3px]"></div>
-          </div>
-        </div>
-        <!-- model  -->
-        <div class="mt-3">
-          <p class="font-medium text-xs">ساعت هوشمند اپل سری ۶</p>
-        </div>
-        <!-- price  -->
-        <div class="mt-5 mb-3 text-end ml-4">
-          <p class="text-orange-700 font-medium">۴,۲۵۰,۰۰۰ تومان</p>
-        </div>
-        <hr class="mx-3" />
-        <!-- order  -->
-        <div class="text-center mt-3">
-          <p class="text-orange-600 font-bold">مشاهده و سفارش</p>
-        </div>
-      </div>
-      <!-- c 8 -->
-      <div class="bg-white p-2 rounded-xl shadow-md">
-        <!-- img  -->
-        <div class="bg-gray-400 flex justify-center rounded-lg py-3 relative">
-          <img src="../assets/images/Cart/2.png" alt="watch pic" class="w-20" />
-          <span class="bg-gray-200 p-2 rounded-full absolute top-3 right-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-4 h-4 fill-orange-600">
-              <path
-                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-            </svg>
-          </span>
-        </div>
-        <!-- details  -->
-        <div class="flex items-center justify-between mt-5 px-2">
-          <span class="text-slate-200">اپل</span>
-          <div class="flex flex-row-reverse">
-            <div class="bg-gray-600 p-2 rounded-full"></div>
-            <div class="bg-orange-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-yellow-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-indigo-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-orange-300 p-2 rounded-full ml-[-3px]"></div>
-          </div>
-        </div>
-        <!-- model  -->
-        <div class="mt-3">
-          <p class="font-medium text-xs">ساعت هوشمند اپل سری ۳</p>
-        </div>
-        <!-- price  -->
-        <div class="mt-5 mb-3 text-end ml-4">
-          <p class="text-orange-700 font-medium">۲,۲۵۰,۰۰۰ تومان</p>
-        </div>
-        <hr class="mx-3" />
-        <!-- order  -->
-        <div class="text-center mt-3">
-          <p class="text-orange-600 font-bold">مشاهده و سفارش</p>
-        </div>
-      </div>
-      <!-- c 9 -->
-      <div class="bg-white p-2 rounded-xl shadow-md mb-8">
-        <!-- img  -->
-        <div class="bg-gray-400 flex justify-center rounded-lg py-3 relative">
-          <img src="../assets/images/Cart/1.png" alt="watch pic" class="w-20" />
-          <span class="bg-gray-200 p-2 rounded-full absolute top-3 right-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-4 h-4 fill-orange-600">
-              <path
-                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-            </svg>
-          </span>
-        </div>
-        <!-- details  -->
-        <div class="flex items-center justify-between mt-5 px-2">
-          <span class="text-slate-200">اپل</span>
-          <div class="flex flex-row-reverse">
-            <div class="bg-white p-2 ring-2 ring-slate-300 rounded-full"></div>
-            <div class="bg-orange-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-yellow-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-indigo-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-orange-300 p-2 rounded-full ml-[-3px]"></div>
-          </div>
-        </div>
-        <!-- model  -->
-        <div class="mt-3">
-          <p class="font-medium text-xs">ساعت هوشمند اپل سری ۶</p>
-        </div>
-        <!-- price  -->
-        <div class="mt-5 mb-3 text-end ml-4">
-          <p class="text-orange-700 font-medium">۴,۲۵۰,۰۰۰ تومان</p>
-        </div>
-        <hr class="mx-3" />
-        <!-- order  -->
-        <div class="text-center mt-3">
-          <p class="text-orange-600 font-bold">مشاهده و سفارش</p>
-        </div>
-      </div>
-      <!-- c 10 -->
-      <div class="bg-white p-2 rounded-xl shadow-md mb-8">
-        <!-- img  -->
-        <div class="bg-gray-400 flex justify-center rounded-lg py-3 relative">
-          <img src="../assets/images/Cart/2.png" alt="watch pic" class="w-20" />
-          <span class="bg-gray-200 p-2 rounded-full absolute top-3 right-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-4 h-4 fill-orange-600">
-              <path
-                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-            </svg>
-          </span>
-        </div>
-        <!-- details  -->
-        <div class="flex items-center justify-between mt-5 px-2">
-          <span class="text-slate-200">اپل</span>
-          <div class="flex flex-row-reverse">
-            <div class="bg-gray-600 p-2 rounded-full"></div>
-            <div class="bg-orange-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-yellow-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-indigo-400 p-2 rounded-full ml-[-3px]"></div>
-            <div class="bg-orange-300 p-2 rounded-full ml-[-3px]"></div>
-          </div>
-        </div>
-        <!-- model  -->
-        <div class="mt-3">
-          <p class="font-medium text-xs">ساعت هوشمند اپل سری ۳</p>
-        </div>
-        <!-- price  -->
-        <div class="mt-5 mb-3 text-end ml-4">
-          <p class="text-orange-700 font-medium">۲,۲۵۰,۰۰۰ تومان</p>
-        </div>
-        <hr class="mx-3" />
-        <!-- order  -->
-        <div class="text-center mt-3">
-          <p class="text-orange-600 font-bold">مشاهده و سفارش</p>
+      <!-- product Section  -->
+      <div class="col-span-12 md:col-span-9">
+        <div
+          x-data="{ products : [
+      {id:1 , title: 'ساعت هوشمند اپل سری ۶' , price:'۴,۲۵۰,۰۰۰ تومان'},
+      {id:2 , title: 'ساعت هوشمند اپل سری ۶' , price:'۴,۲۵۰,۰۰۰ تومان'},
+      {id:3 , title: 'ساعت هوشمند اپل سری ۶' , price:'۴,۲۵۰,۰۰۰ تومان'},
+      {id:4 , title: 'ساعت هوشمند اپل سری ۶' , price:'۴,۲۵۰,۰۰۰ تومان'},
+      {id:5 , title: 'ساعت هوشمند اپل سری ۶' , price:'۴,۲۵۰,۰۰۰ تومان'},
+      {id:6 , title: 'ساعت هوشمند اپل سری ۶' , price:'۴,۲۵۰,۰۰۰ تومان'},
+      {id:7 , title: 'ساعت هوشمند اپل سری ۶' , price:'۴,۲۵۰,۰۰۰ تومان'},
+      {id:8 , title: 'ساعت هوشمند اپل سری ۶' , price:'۴,۲۵۰,۰۰۰ تومان'},
+      {id:9 , title: 'ساعت هوشمند اپل سری ۶' , price:'۴,۲۵۰,۰۰۰ تومان'},
+      {id:10 , title: 'ساعت هوشمند اپل سری ۶' , price:'۴,۲۵۰,۰۰۰ تومان'}
+      ] }"
+          class="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-4 gap-y-6 mb-16">
+          <template x-for="product in products" :key="product.id">
+            <!-- c 1 -->
+            <div class="bg-white p-2 rounded-xl shadow-md">
+              <!-- img  -->
+              <div
+                class="bg-gray-400 flex justify-center rounded-lg py-3 relative">
+                <img
+                  src="../assets/images/Cart/1.png"
+                  alt="watch pic"
+                  class="w-20" />
+                <span
+                  class="bg-gray-200 p-2 rounded-full absolute top-3 right-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4 fill-orange-600">
+                    <path
+                      d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                  </svg>
+                </span>
+              </div>
+              <!-- details  -->
+              <div class="flex items-center justify-between mt-5 px-2">
+                <span class="text-slate-200">اپل</span>
+                <div
+                  x-data="{color : 'blue'}"
+                  class="flex flex-row-reverse items-center">
+                  <div
+                    @click="color = 'white'"
+                    :class="color === 'white' ? 'ring-1 ring-gray-700' : '' "
+                    class="bg-white md:w-6 md:h-6 border-2 ring-slate-300 rounded-full flex items-center justify-center cursor-pointer">
+                    <svg
+                      x-show="color === 'white' "
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-4 h-4">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                  </div>
+                  <div
+                    @click="color = 'orange'"
+                    :class="color === 'orange' ? 'ring-1 ring-orange-400' : '' "
+                    class="bg-orange-400 rounded-full md:w-6 md:h-6 border-2 border-white -ml-1 cursor-pointer flex items-center justify-center">
+                    <svg
+                      x-show="color === 'orange' "
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-4 h-4">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                  </div>
+                  <div
+                    @click="color = 'indigo'"
+                    :class="color === 'indigo' ? 'ring-1 ring-indigo-400' : '' "
+                    class="bg-indigo-400 rounded-full md:w-6 md:h-6 border-2 border-white -ml-1 cursor-pointer flex items-center justify-center">
+                    <svg
+                      x-show="color === 'indigo' "
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-4 h-4">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                  </div>
+                  <div
+                    @click="color = 'red'"
+                    :class="color === 'red' ? 'ring-1 ring-red-300' : '' "
+                    class="bg-red-300 rounded-full md:w-6 md:h-6 border-2 border-white md: -ml-1 cursor-pointer flex items-center justify-center">
+                    <svg
+                      x-show="color === 'red' "
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-4 h-4">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <!-- model  -->
+              <div class="mt-3">
+                <p
+                  class="font-medium text-xs md:text-sm"
+                  x-text="product.title"></p>
+              </div>
+              <!-- price  -->
+              <div class="mt-5 mb-3 text-end ml-4">
+                <p
+                  class="text-orange-700 font-medium text-sm md:text-base"
+                  x-text="product.price"></p>
+              </div>
+              <hr class="mx-3" />
+              <!-- order  -->
+              <div class="text-center mt-3">
+                <button type="button" class="text-orange-600 font-bold">
+                  مشاهده و سفارش
+                </button>
+              </div>
+            </div>
+          </template>
         </div>
       </div>
     </div>
+    <!--  ======= Products List =======  -->
 
     <!--  ======= Mobile menu =======  -->
     <div
