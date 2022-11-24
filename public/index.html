@@ -967,7 +967,7 @@
                   <div
                     @click="color = 'white'"
                     :class="color === 'white' ? 'ring-1 ring-gray-500' : '' "
-                    class="bg-white md:w-6 md:h-6 border-2 ring-slate-300 rounded-full flex items-center justify-center cursor-pointer">
+                    class="bg-white w-6 h-6 border-2 ring-slate-300 rounded-full flex items-center justify-center cursor-pointer">
                     <svg
                       x-show="color === 'white' "
                       xmlns="http://www.w3.org/2000/svg"
@@ -985,7 +985,7 @@
                   <div
                     @click="color = 'black'"
                     :class="color === 'black' ? 'ring-1 ring-white' : '' "
-                    class="bg-black rounded-full md:w-6 md:h-6 border-2 border-white -ml-1 cursor-pointer flex items-center justify-center">
+                    class="bg-black rounded-full w-6 h-6 border-2 border-white -ml-1 cursor-pointer flex items-center justify-center">
                     <svg
                       x-show="color === 'black' "
                       xmlns="http://www.w3.org/2000/svg"
@@ -1003,7 +1003,7 @@
                   <div
                     @click="color = 'indigo'"
                     :class="color === 'indigo' ? 'ring-1 ring-indigo-400' : '' "
-                    class="bg-indigo-400 rounded-full md:w-6 md:h-6 border-2 border-white -ml-1 cursor-pointer flex items-center justify-center">
+                    class="bg-indigo-400 rounded-full w-6 h-6 border-2 border-white -ml-1 cursor-pointer flex items-center justify-center">
                     <svg
                       x-show="color === 'indigo' "
                       xmlns="http://www.w3.org/2000/svg"
@@ -1021,7 +1021,7 @@
                   <div
                     @click="color = 'red'"
                     :class="color === 'red' ? 'ring-1 ring-red-300' : '' "
-                    class="bg-red-300 rounded-full md:w-6 md:h-6 border-2 border-white md: -ml-1 cursor-pointer flex items-center justify-center">
+                    class="bg-red-300 rounded-full w-6 h-6 border-2 border-white cursor-pointer flex items-center justify-center">
                     <svg
                       x-show="color === 'red' "
                       xmlns="http://www.w3.org/2000/svg"
@@ -1373,7 +1373,8 @@
         <span x-show="activeTab === 1" class="mr-1 text-sm">خانه</span>
       </div>
       <!-- item 2  -->
-      <div
+      <a
+        href="./categories.html"
         @click="activeTab = 2"
         class="flex items-center"
         :class="activeTab === 2 ? 'text-slate-800 font-extrabold' : 'text-gray-400' ">
@@ -1397,9 +1398,10 @@
         </span>
         <!-- text  -->
         <span x-show="activeTab === 2" class="mr-1 text-sm">دسته بندی</span>
-      </div>
+      </a>
       <!-- item 3  -->
-      <div
+      <a
+        href="Cart.html"
         @click="activeTab = 3"
         class="flex items-center"
         :class="activeTab === 3 ? 'text-slate-800 font-extrabold' : 'text-gray-400' ">
@@ -1417,7 +1419,7 @@
         </span>
         <!-- text  -->
         <span x-show="activeTab === 3" class="mr-1 text-sm">سبد خرید</span>
-      </div>
+      </a>
       <!-- item 4  -->
       <div
         @click="activeTab = 4"
@@ -1612,7 +1614,20 @@
             </svg>
             <p class="ml-2">۰۲۱-۱۲۳۴۵۶</p>
           </span>
-          <p class="font-light mt-4 flex justify-end">info@digitize.com</p>
+          <span class="flex flex-row-reverse items-center font-light mt-4">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19.8334 4.08301H8.16671C4.66671 4.08301 2.33337 5.83301 2.33337 9.91634V18.083C2.33337 22.1663 4.66671 23.9163 8.16671 23.9163H19.8334C23.3334 23.9163 25.6667 22.1663 25.6667 18.083V9.91634C25.6667 5.83301 23.3334 4.08301 19.8334 4.08301ZM20.3817 11.188L16.73 14.1047C15.96 14.723 14.98 15.0263 14 15.0263C13.02 15.0263 12.0284 14.723 11.27 14.1047L7.61837 11.188C7.24504 10.8847 7.18671 10.3247 7.47837 9.95134C7.78171 9.57801 8.33004 9.50801 8.70337 9.81134L12.355 12.728C13.2417 13.4397 14.7467 13.4397 15.6334 12.728L19.285 9.81134C19.6584 9.50801 20.2184 9.56634 20.51 9.95134C20.8134 10.3247 20.755 10.8847 20.3817 11.188Z"
+                fill="#FF755C" />
+            </svg>
+
+            <p class="ml-2">info@digitize.com</p>
+          </span>
         </div>
       </div>
     </foote>

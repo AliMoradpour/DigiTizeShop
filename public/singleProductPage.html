@@ -15,10 +15,19 @@
     <!--  ======= Mobile Porduct AppBar =======  -->
     <div class="md:hidden flex justify-between items-center mt-10 px-4 mb-6">
       <!-- logo  -->
-      <a href="index.html" class="bg-white shadow-lg w-8 h-8 flex items-center justify-center rounded-lg">
-        <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.808359 0.890169C0.808359 1.02475 0.857943 1.15934 0.964193 1.26559L5.58253 5.88392C5.92253 6.22392 5.92253 6.77642 5.58253 7.11642L0.964193 11.7348C0.758776 11.9402 0.758776 12.2802 0.964193 12.4856C1.16961 12.691 1.50961 12.691 1.71503 12.4856L6.33336 7.86725C7.08419 7.11642 7.08419 5.891 6.33336 5.13308L1.71503 0.514752C1.50961 0.309335 1.16961 0.309335 0.964193 0.514752C0.865026 0.621002 0.808359 0.755586 0.808359 0.890169Z" fill="#222F5D"/>
-          </svg>
+      <a
+        href="index.html"
+        class="bg-white shadow-lg w-8 h-8 flex items-center justify-center rounded-lg">
+        <svg
+          width="7"
+          height="13"
+          viewBox="0 0 7 13"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0.808359 0.890169C0.808359 1.02475 0.857943 1.15934 0.964193 1.26559L5.58253 5.88392C5.92253 6.22392 5.92253 6.77642 5.58253 7.11642L0.964193 11.7348C0.758776 11.9402 0.758776 12.2802 0.964193 12.4856C1.16961 12.691 1.50961 12.691 1.71503 12.4856L6.33336 7.86725C7.08419 7.11642 7.08419 5.891 6.33336 5.13308L1.71503 0.514752C1.50961 0.309335 1.16961 0.309335 0.964193 0.514752C0.865026 0.621002 0.808359 0.755586 0.808359 0.890169Z"
+            fill="#222F5D" />
+        </svg>
       </a>
       <!-- header  -->
       <div class="font-medium text-xl text-slate-800 md:text-sm">
@@ -161,7 +170,7 @@
     <!-- ===== Grid Layout ===== -->
     <div
       x-data="{navProduct : 1}"
-      class="container mx-auto max-w-screen-2xl grid grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)] md:gap-6">
+      class="container mx-auto max-w-screen-2xl grid grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)] md:gap-6 mb-12" >
       <!-- ===== sidebar ===== -->
       <div
         class="hidden md:block col-span-4 md:col-span-4 lg:col-span-3 xl:col-span-2 row-span-2">
@@ -328,8 +337,358 @@
           </button>
         </div>
       </div>
+      <!-- ======= product ======= -->
+      <div
+        class="col-span-12 md:col-span-8 lg:col-span-9 xl:col-span-10 px-4 mb-16">
+        <div
+          class="flex flex-col gap-y-4 items-center justify-center w-full mt-6">
+          <!-- pic  -->
+          <img src="../assets/images/Home/1.png" alt="" />
+          <!-- detail  -->
+          <div class="mt-10 text-center">
+            <p class="text-2xl font-medium">آیفون ۱۳ ۱۲۸ گیگابایت</p>
+            <p class="font-light text-lg mt-3">Apple Iphone 13 128 GB</p>
+          </div>
+          <!-- color  -->
+          <div class="flex justify-evenly w-full items-center mt-5">
+            <p class="text-lg font-bold text-slate-800">انتخاب رنگ:</p>
+            <div
+              x-data="{color : 'black'}"
+              class="flex flex-row-reverse items-center">
+              <div
+                @click="color = 'white'"
+                :class="color === 'white' ? 'ring-1 ring-gray-500' : '' "
+                class="bg-white w-6 h-6 border-2 ring-slate-300 rounded-full flex items-center justify-center cursor-pointer">
+                <svg
+                  x-show="color === 'white' "
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-4 h-4">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              </div>
+              <div
+                @click="color = 'black'"
+                :class="color === 'black' ? 'ring-1 ring-white' : '' "
+                class="bg-black rounded-full w-6 h-6 border-2 border-white -ml-1 cursor-pointer flex items-center justify-center">
+                <svg
+                  x-show="color === 'black' "
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="#fff"
+                  class="w-4 h-4">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              </div>
+              <div
+                @click="color = 'indigo'"
+                :class="color === 'indigo' ? 'ring-1 ring-indigo-400' : '' "
+                class="bg-indigo-400 rounded-full w-6 h-6 border-2 border-white -ml-1 cursor-pointer flex items-center justify-center">
+                <svg
+                  x-show="color === 'indigo' "
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="#fff"
+                  class="w-4 h-4">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              </div>
+              <div
+                @click="color = 'red'"
+                :class="color === 'red' ? 'ring-1 ring-red-300' : '' "
+                class="bg-red-300 rounded-full w-6 h-6 border-2 border-white cursor-pointer flex items-center justify-center">
+                <svg
+                  x-show="color === 'red' "
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="#fff"
+                  class="w-4 h-4">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- shop name  -->
+          <div class="flex flex-wrap gap-6 justify-center">
+            <!-- n1 -->
+            <div class="flex items-center gap-x-2">
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="19"
+                  fill="none">
+                  <circle cx="12" cy="8" r="8" fill="#E2E2E2" />
+                  <path
+                    stroke="#222F5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width=".875"
+                    d="M1.756 11.545v2.62c0 2.618 1.05 3.668 3.669 3.668h3.144c2.62 0 3.67-1.05 3.67-3.669v-2.62" />
+                  <path
+                    stroke="#222F5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width=".875"
+                    d="M7 12c1.068 0 1.855-.87 1.75-1.937l-.385-3.897H5.641l-.39 3.897c-.106 1.067.682 1.936 1.75 1.936Z" />
+                  <path
+                    stroke="#222F5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width=".875"
+                    d="M10.681 12c1.178 0 2.042-.957 1.925-2.13l-.163-1.604c-.21-1.517-.794-2.1-2.322-2.1h-1.78l.41 4.09c.098.962.967 1.743 1.93 1.743ZM3.29 12c.963 0 1.832-.782 1.925-1.745l.128-1.289.28-2.8H3.844c-1.528 0-2.111.583-2.321 2.1L1.365 9.87C1.248 11.043 2.112 12 3.29 12ZM7 14.916c-.974 0-1.458.484-1.458 1.458v1.459h2.917v-1.459c0-.974-.485-1.458-1.459-1.458Z" /></svg
+              ></span>
+              <span>فروشنده : </span>
+              <span class="text-sm text-gray-400">دیجی تایز</span>
+            </div>
+            <!-- n2 -->
+            <div class="flex items-center gap-x-2">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="19"
+                  fill="none">
+                  <circle cx="13" cy="8" r="8" fill="#E2E2E2" />
+                  <path
+                    stroke="#222F5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.063"
+                    d="M7.43 3.58 3.897 4.91c-.815.305-1.48 1.268-1.48 2.132v5.263c0 .836.552 1.934 1.225 2.437l3.046 2.274c.999.75 2.642.75 3.64 0l3.046-2.274c.673-.503 1.226-1.6 1.226-2.437V7.043c0-.87-.666-1.834-1.48-2.139L9.583 3.58c-.602-.22-1.566-.22-2.153 0Z" />
+                </svg>
+              </span>
+              <span>کارانتی: </span>
+              <span class="text-sm text-gray-400">۱۸ ماه زرین خدمت</span>
+            </div>
+            <!-- n3 -->
+            <div class="flex items-center gap-x-2">
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="21"
+                  fill="none">
+                  <circle cx="12" cy="8" r="8" fill="#E2E2E2" />
+                  <path
+                    stroke="#222F5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.125"
+                    d="M10 6.333V13c0 .733-.6 1.333-1.333 1.333H1.334V10.08a2.6 2.6 0 0 0 2.06.92 2.563 2.563 0 0 0 1.733-.707c.207-.173.38-.393.513-.633.24-.407.373-.887.36-1.387a2.655 2.655 0 0 0-.906-1.94H10Z" />
+                  <path
+                    stroke="#222F5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.125"
+                    d="M14.667 14.333v2c0 1.107-.893 2-2 2H12C12 17.6 11.4 17 10.667 17s-1.333.6-1.333 1.333H6.667c0-.733-.6-1.333-1.333-1.333C4.6 17 4 17.6 4 18.333h-.667c-1.106 0-2-.893-2-2v-2h7.334C9.4 14.333 10 13.733 10 13V8.333h1.227c.48 0 .92.26 1.16.673L13.527 11h-.86c-.367 0-.667.3-.667.666v2c0 .367.3.667.667.667h2Z" />
+                  <path
+                    stroke="#222F5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.125"
+                    d="M5.333 19.667a1.333 1.333 0 1 0 0-2.667 1.333 1.333 0 0 0 0 2.667ZM10.667 19.667a1.333 1.333 0 1 0 0-2.667 1.333 1.333 0 0 0 0 2.667ZM14.667 13v1.333h-2a.669.669 0 0 1-.667-.666v-2c0-.367.3-.667.667-.667h.86l1.14 2Z" />
+                  <path
+                    stroke="#222F5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-miterlimit="10"
+                    stroke-width="1.125"
+                    d="M6 8.333c0 .8-.353 1.513-.906 2a2.666 2.666 0 1 1-1.76-4.667A2.666 2.666 0 0 1 6 8.333Z" />
+                  <path
+                    stroke="#222F5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-miterlimit="10"
+                    stroke-width="1.125"
+                    d="M3.5 7.499v1l-.833.5" />
+                </svg>
+              </span>
+              <span>ارسال توسط: </span>
+              <span class="text-sm text-gray-400">انبار تهران</span>
+            </div>
+          </div>
+          <!-- Product benefit  -->
+          <div class="bg-white rounded-xl w-full p-4">
+            <!-- title  -->
+            <p class="font-bold text-slate-800 mb-4">ویژگی های کالا :</p>
+            <!-- hard space  -->
+            <div class="w-full">
+              <span class="flex items-center gap-2 font-light">
+                <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                <span>حافظه داخلی :</span>
+              </span>
+              <span class="font-bold mr-3">128 گیگابایت</span>
+            </div>
+            <!-- display width  -->
+            <div class="w-full my-4">
+              <span class="flex items-center gap-2 font-light">
+                <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                <span>بازه اندازه صفحه نمایش :</span>
+              </span>
+              <span class="font-bold mr-3">6.0 اینج و بزرگتر</span>
+            </div>
+            <!-- net  -->
+            <div class="w-full my-4">
+              <span class="flex items-center gap-2 font-light">
+                <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                <span>شبکه های ارتباطی :</span>
+              </span>
+              <div class="font-bold mr-3 flex items-center gap-4">
+                <span>5G</span>
+                <span>4G</span>
+                <span>3G</span>
+                <span>2G</span>
+              </div>
+            </div>
+          </div>
+          <!-- Product Review  -->
+          <div class="bg-white rounded-xl w-full p-4">
+            <!-- title  -->
+            <p class="font-bold text-slate-800 mb-4 text-xl">
+              نقد و بررسی این محصول
+            </p>
+            <!-- text  -->
+            <p class="mb-4 text-sm text-slate-600">
+              گوشی موبایل iPhone 13 CH پرچم‌دار جدید شرکت اپل است که با چند
+              ویژگی جدید و دوربین دوگانه روانه بازار شده است. اپل برای ویژگی‌ها
+              و طراحی کلی این گوشی از همان فرمول چند سال اخیرش استفاده کرده است.
+              نمایشگر آیفون 13 به پنل Super Retina مجهز ‌شده است تا تصاویر بسیار
+              مطلوبی را به کاربر عرضه کند. این نمایشگر رزولوشن بسیار بالایی
+              دارد؛ به‌طوری‌که در اندازه­‌ی 6.1 اینچی‌اش، حدود 460 پیکسل را در
+              هر اینچ جا داده است. امکان شارژ بی‌‌سیم باتری در این گوشی وجود
+              دارد. روکش سرامیکی صفحه‌نمای ...
+            </p>
 
+            <p class="text-orange-500 text-end">ادامه مطلب</p>
+          </div>
+          <!-- Product layout  -->
+          <div x-data="{nav : 2 }" class="bg-white rounded-xl w-full p-4">
+            <!-- nav  -->
+            <div
+              class="flex items-center justify-center gap-4 rounded-full bg-stone-50 w-1/2 mx-auto">
+              <span
+                @click="nav = 1"
+                :class="nav === 1 ? 'bg-white rounded-full text-slate-800 shadow font-bold' : 'text-gray-400' "
+                class="cursor-pointer px-4 py-1"
+                >دوربین</span
+              >
+              <span
+                @click="nav = 2"
+                :class="nav === 2 ? 'bg-white rounded-full text-slate-800 shadow font-bold' : 'text-gray-400' "
+                class="cursor-pointer px-4 py-1"
+                >طراحی</span
+              >
+              <span
+                @click="nav = 3"
+                :class="nav === 3 ? 'bg-white rounded-full text-slate-800 shadow font-bold' : 'text-gray-400' "
+                class="cursor-pointer px-4 py-1"
+                >پردازنده</span
+              >
+            </div>
+
+            <div>
+              <!-- title  -->
+              <p
+                x-show="nav === 1"
+                class="font-bold text-slate-800 mb-4 text-xl p-4">
+                دوربین
+              </p>
+              <p
+                x-show="nav === 2"
+                class="font-bold text-slate-800 mb-4 text-xl p-4">
+                طراحی
+              </p>
+              <p
+                x-show="nav === 3"
+                class="font-bold text-slate-800 mb-4 text-xl p-4">
+                پردازنده
+              </p>
+              <!-- text  -->
+              <!-- n1 -->
+              <p x-show="nav===1" class="text-sm text-slate-500">
+                شاید در نگاه اول و بر روی کاغذ، سنسور‌های دوربین در نظر گرفته
+                شده برای آیفون13 چندان تفاوتی با سنسور‌های دوربین آیفون 12
+                نداشته باشند، اما بدون شک آیفون 13 می‌تواند در این بخش عملکرد
+                بهتری به نسبت مدل آیفون 12 داشته باشد. شاید از خودتان بپرسید که
+                چرا؟ در ادامه به شما خواهیم گفت. در ابتدا نگاهی به مشخصات
+                سنسور‌های دوربین در نظر گرفته شده برای این گوشی‌هوشمند خواهیم
+                داشت. یک سنسور دوربین اصلی با رزولوشن 12 مگاپیکسل، گشودگی دریچه
+                دیافراگم f/1.6، فاصله کانونی 26 میلی متر از نوع عریض به‌همراه
+                سنسور دوربین از نوع فوق عریض (ultra wide) با رزولوشن 12
+                مگاپیکسل، گشودگی دریچه دیافراگم f/2.4، زاویه دید 120 درجه و
+                فاصله کانونی 13 میلی‌متر، سنسور‌های دوربین دوگانه آیفون 13 را
+                تشکیل می‌دهند. برای دوربین سلفی نیز، سنسور 12 مگاپیکسل از نوع
+                عریض با گشودگی دریچه دیافراگم f/2.2 در نظر گرفته شده که توانایی
+                ضبط ویدیو با کیفیت 4K و نرخ 60 فریم در ثانیه را هم دارد.
+              </p>
+              <!-- n2 -->
+              <p x-show="nav===2" class="text-sm text-slate-500">
+                اپل چندان تمایلی به تغییر طراحی‌های موفق خود ندارد و ترجیح
+                می‌دهد تا زبان طراحی موفق و جذاب خود را حفظ کند. آیفون 13 نیز از
+                طراحی مشابهی با نسل قبلی خود بهره برده است. در نمای رو‌به‌رویی
+                همان ناچ و بریدگی آشنای سری‌های قبلی را می‌بینیم که این بار عرض
+                کمتری به نسبت ناچ صفحه‌نمایش آیفون 12 دارد. در نمای پشتی هم شاهد
+                قرار گیری دو سنسور دوربین می‌باشیم که بر‌خلاف مدل آیفون 12، این
+                بار دو سنسور دوربین با چیدمانی ضربدری با فلش LED در بریدگی مربعی
+                شکل قرار گرفته‌اند. این در حالی است که دو سنسور دوربین قسمت پشتی
+                آیفون 12 با چیدمانی ستونی شکل در کنار یکدیگر قرار گرفته‌اند.
+              </p>
+              <!-- n3 -->
+              <p x-show="nav===3" class="text-sm text-slate-500">
+                باید قبول کنیم که تا به امروز، پردازنده‌های قدرتمند گوشی‌های
+                هوشمند اپل در کنار سیستم عامل بی‌نظیر iOS توانسته اند عملکرد
+                بسیار شگفت‌انگیزی را به نمایش بگذارند. این بار هم آیفون 13
+                همانند برادران بزرگترش، یعنی آیفون 13 پرو وآیفون 13 پرو مکس، به
+                قدرتمند‌ترین پردازنده این شرکت یعنیُ A15 بایونیک مجهز شده است.
+                پردازنده ای با معماری 5 نانومتری و متشکل از 6 هسته (2 هسته
+                قدرتمند‌تر به‌همراه 4 هسته با کارایی معمولی و صرفه انرژی کمتر).
+                برای GPU یا همان پردازنده گرافیکی نیست، پردازنده اختصاصی 4
+                هسته‌ای در نظر گرفته شده است.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- add to card button  -->
+    <div
+      class="fixed bottom-0 w-full bg-white rounded-tr-md rounded-tl-md shadow-[0_-4px_8px_0_rgba(0,0,0,0.1)] p-4">
+      <div class="flex items-center justify-evenly">
+        <!-- button -->
+        <button class="bg-orange-500 text-stone-50 font-medium text-xl p-2 rounded-md">
+          اضافه به سبد خرید
+        </button>
+        <!-- price  -->
+        <div>
+          <p class="font-bold text-xl">۲۸,۲۵۰,۰۰۰</p>
+          <p class="font-light">تومان</p>
+        </div>
+      </div>
+    </div>
+
     <!-- alpine js  -->
     <script src="//unpkg.com/alpinejs"></script>
   </body>
